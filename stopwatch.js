@@ -38,7 +38,7 @@ intervalId = setInterval(stopwatchUpdate, intervalRate)
 
 // adds the interval to the stopwatch time since the last 'tick'
 // then updates the DOM with the new stopwatch time
-function stopwatchUpdate () {
+function stopwatchUpdate() {
   rawTime += intervalRate;
   stopwatchTime.innerHTML = formatTime(rawTime);
 }
@@ -74,7 +74,8 @@ function stopwatchReset(event){
   console.log('reset!');
 
   lapList.innerHTML = "";
-  stopwatchTime.innerHTML = formatTime(0);
+  rawTime = 0;
+  stopwatchTime.innerHTML = formatTime(rawTime);
   clearInterval(intervalId);
 }
 
