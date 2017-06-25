@@ -9,7 +9,7 @@ const laplist = document.querySelector('#lapList')
 const stopwatchTime = document.querySelector('#stopwatchTime')
 
 //constant value that should not ever change
-const laps = []
+var laps = []
 const intervalRate = 10 //update the stopwatch every 10 milliseconds
 
 //values that will change pretty often
@@ -77,6 +77,7 @@ function stopwatchReset(event){
   rawTime = 0;
   stopwatchTime.innerHTML = formatTime(rawTime);
   clearInterval(intervalId);
+  laps = [];
 }
 
 // adds a leading zero because humans like them
